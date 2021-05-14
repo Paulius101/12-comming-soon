@@ -9,7 +9,7 @@ _28 group website project_
 
 This project is for educational porpuses only. Pull request are welcome, but priority for my real-life students! Thank you for your cooperation!
 
-Site published at
+Site published at https://paulius101.github.io/12-comming-soon/
 
 Design: [Coming soon] https://cdn.discordapp.com/attachments/648536139677958156/651479019476221953/coming-soon-wide.png
 
