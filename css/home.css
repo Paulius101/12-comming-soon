@@ -22,10 +22,41 @@
   background-color: var(--color-secondary);
 }
 
+/* HERO SECTION */
 .container.hero {
   padding-bottom: 25px;
+  background-image: url(../img/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.hero > .row-small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.logo {
+  height: 40px;
+  width: 200px;
+  object-fit: contain;
+  object-position: center;
+}
+.main-title {
+  text-transform: uppercase;
+  font-size: 70px;
+  color: var(--color-dark);
+}
+.main-description {
+  font-size: 20px;
+  color: var(--color-grey);
 }
 
+/* MAIN CONTENT SECTION */
+
+/* FOOTER SECTION */
 footer.container {
   padding-top: 0;
 }
