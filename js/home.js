@@ -4,5 +4,6 @@ import { socials } from "./components/socials/socials.js";
 import { socialsData } from "./data/socialsData.js";
 
 // EXECUTION
-Clock('#clock_1');
+new Clock('#clock_1');
+// new Clock(485545);
 socials('footer .socials', socialsData);
