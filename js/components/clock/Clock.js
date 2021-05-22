@@ -4,6 +4,7 @@ class Clock {
         this.targetDate = targetDate;
 
         this.DOM = null;
+        this.allValuesDOM = null;
 
         this.init();
     }
@@ -14,6 +15,7 @@ class Clock {
         }
 
         this.render();
+        this.updateClock();
     }
 
     isValidSelector() {
@@ -49,8 +51,48 @@ class Clock {
         return updatedTime;
     }
 
+    calcDeadline() {
+        const dabartinisLaikas = new Date();
+        const einamiejiMetai = dabartinisLaikas.getFullYear();
+
+        let numanomaGimtadienioData = einamiejiMetai + '-' + this.targetDate;
+        let numanomasLaikas = new Date(numanomaGimtadienioData);
+
+        const dabartinesMilisekundes = dabartinisLaikas.getTime();
+        let numanomosMilisekundes = numanomasLaikas.getTime();
+
+        if (dabartinesMilisekundes > numanomosMilisekundes) {
+            numanomaGimtadienioData = (einamiejiMetai + 1) + '-' + this.targetDate;
+            numanomasLaikas = new Date(numanomaGimtadienioData);
+            numanomosMilisekundes = numanomasLaikas.getTime();
+        }
+
+        const likusiosMilisekundes = numanomosMilisekundes - dabartinesMilisekundes;
+        let likusiosSekundes = Math.floor(likusiosMilisekundes / 1000);
+
+        const dienos = Math.floor(likusiosSekundes / 60 / 60 / 24);
+        likusiosSekundes -= dienos * 60 * 60 * 24;
+
+        const valandos = Math.floor(likusiosSekundes / 60 / 60);
+        likusiosSekundes -= valandos * 60 * 60;
+
+        const minutes = Math.floor(likusiosSekundes / 60);
+        likusiosSekundes -= minutes * 60;
+
+        return [dienos, valandos, minutes, likusiosSekundes];
+    }
+
+    updateClock() {
+        setInterval(() => {
+            const timeValues = this.formatTime(this.calcDeadline());
+            for (let i = 0; i < 4; i++) {
+                this.allValuesDOM[i].innerText = timeValues[i];
+            }
+        }, 1000)
+    }
+
     render() {
-        const timeValues = this.formatTime([2, 9, 37, 39]);
+        const timeValues = this.formatTime(this.calcDeadline());
         const labelValues = ['Days', 'Hours', 'Minutes', 'Seconds'];
         let HTML = '';
 
@@ -62,23 +104,8 @@ class Clock {
         }
 
         this.DOM.innerHTML = HTML;
+        this.allValuesDOM = this.DOM.querySelectorAll('.value');
     }
 }
-
-// function Clock(selector) {
-//     const DOM = document.querySelector(selector);
-//     const timeValues = [432, 9, 37, 39];
-//     const labelValues = ['Days', 'Hours', 'Minutes', 'Seconds'];
-//     let HTML = '';
-
-//     for (let i = 0; i < timeValues.length; i++) {
-//         HTML += `<div class="time">
-//                     <div class="value">${timeValues[i]}</div>
-//                     <div class="label">${labelValues[i]}</div>
-//                 </div>`;
-//     }
-
-//     DOM.innerHTML = HTML;
-// }
 
 export { Clock }
