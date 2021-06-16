@@ -1,14 +1,87 @@
-@import "./base/layout.css";
-@import "./base/reset.css";
-@import "./base/reset.css";
+/* base */
+@import './base/reset.css';
+@import './base/variables.css';
+@import './base/layout.css';
 
 /* 3rd party */
+@import './3rd-party/font-awesome.min.css';
 
 /* components */
-@import "./components/button.css";
-@import "./components/clock.css";
-@import "./components/form.css";
-@import "./components/mouse.css";
-@import "./components/progress-bar.css";
+@import './components/button.css';
+@import './components/clock.css';
+@import './components/form.css';
+@import './components/mouse.css';
+@import './components/progress-bar.css';
 
-/* Custom style below this comment */
+/* CUSTOM STYLE BELOW THIS COMMENT */
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+/* HERO SECTION */
+.container.hero {
+  padding-bottom: 25px;
+  background-image: url(../img/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.hero > .row-small {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.logo {
+  height: 40px;
+  width: 200px;
+  object-fit: contain;
+  object-position: center;
+}
+.main-title {
+  text-transform: uppercase;
+  font-size: 70px;
+  color: var(--color-dark);
+}
+.main-description {
+  font-size: 20px;
+  color: var(--color-grey);
+}
+
+/* MAIN CONTENT SECTION */
+
+/* FOOTER SECTION */
+footer.container {
+  padding-top: 0;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: 1px solid var(--color-light);
+}
+.socials > .fa {
+  color: var(--color-light);
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+.socials > .fa:hover {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
