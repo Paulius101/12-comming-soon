@@ -107,3 +107,57 @@ footer.container {
   background-color: var(--color-light);
   color: var(--color-primary);
 }
+
+.bottom-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.div1 {
+  padding: 0px 15px;
+  color: #fff8;
+}
+
+.div2 {
+  padding: 0px 15px;
+  color: #fff8;
+  border-left: 1px white solid;
+  border-right: 1px white solid;
+}
+
+.div3 {
+  padding: 0px 15px;
+  color: #fff8;
+}
+
+.div1 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.div3 > a {
+  text-decoration: none;
+  color: white;
+}
+
+.bottom-texts > img {
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+  object-fit: contain;
+}
+.bottom-texts > p {
+  color: #fff8;
+  text-align: center;
+}
+
+.bottom-texts > p > a {
+  text-decoration: none;
+  color: white;
+}
