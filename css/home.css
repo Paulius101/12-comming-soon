@@ -111,53 +111,51 @@ footer.container {
 .bottom-texts {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  align-items: center;
+  text-align: center;
+  color: #fffb;
+  font-size: 18px;
+  line-height: 1.6em;
 }
-.items {
+.footer-logo {
+  height: 50px;
+  margin: 30px 0;
+  object-fit: contain;
+  object-position: center;
+}
+.multi-text {
   display: flex;
   justify-content: center;
+  gap: 0 30px;
 }
-
-.div1 {
-  padding: 0px 15px;
-  color: #fff8;
+.multi-text > div {
+  position: relative;
 }
-
-.div2 {
-  padding: 0px 15px;
-  color: #fff8;
-  border-left: 1px white solid;
-  border-right: 1px white solid;
+.multi-text > div::before {
+  display: inline-block;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background-color: var(--color-light);
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.div3 {
-  padding: 0px 15px;
-  color: #fff8;
-}
-
-.div1 > a {
-  text-decoration: none;
-  color: white;
-}
-
-.div3 > a {
-  text-decoration: none;
-  color: white;
-}
-
-.bottom-texts > img {
-  width: 200px;
-  height: 50px;
-  margin-top: 20px;
-  object-fit: contain;
+.multi-text > div:first-of-type::before {
+  display: none;
 }
 .bottom-texts > p {
-  color: #fff8;
-  text-align: center;
+}
+.bottom-texts a {
+  color: var(--color-light);
+  text-decoration: none;
 }
 
-.bottom-texts > p > a {
-  text-decoration: none;
-  color: white;
+@media (max-width: 640px) {
+  .multi-text {
+    flex-direction: column;
+  }
+  .multi-text > div::before {
+    display: none;
+  }
 }
