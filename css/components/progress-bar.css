@@ -1,17 +1,12 @@
 .progress-bar {
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .progress-bar > .top {
-  display: inline-block;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
   font-size: 20px;
-}
-.progress-bar > .top > .title {
-  float: left;
-}
-.progress-bar > .top > .value {
-  float: right;
 }
 .progress-bar > .bottom {
   display: inline-block;
@@ -20,6 +15,7 @@
   background-color: var(--color-grey);
 }
 .progress-bar > .bottom > .progress {
+  display: inline-block;
   height: 100%;
   width: 90%;
   background-color: var(--color-primary);
