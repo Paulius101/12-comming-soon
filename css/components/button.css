@@ -1,8 +1,8 @@
 .up {
   display: inline-block;
   position: absolute;
-  top: 420px;
-  left: 980px;
+  top: 1330px;
+  left: 1120px;
   height: 50px;
   width: 50px;
   border: none;
@@ -15,7 +15,7 @@
   font-size: 30px;
   color: white;
 }
-.container > .row-big {
+footer {
   position: relative;
 }
 

@@ -9,7 +9,11 @@ input {
   border: none;
   border-bottom: 1px solid var(--color-grey);
 }
-
+textarea {
+  border:none;
+  border-bottom: 1px solid var(--color-grey);
+  color: var(--color-grey);
+}
 #name {
   display: inline-block;
   width: 46%;
@@ -28,7 +32,8 @@ input {
 
 #message {
   display: inline-block;
-  margin-top: 18px;;
+  margin-top: 18px;
+  height:80px;
   width: 100%;
   line-height: 90px;
   font-size: 16px;
@@ -54,4 +59,19 @@ input {
 }
 .enter-email-input::placeholder {
   color: white;
+}
+
+#send-message {
+  background-color: #EA1E63;
+  margin-top: 25px;
+  line-height: 40px;
+  display: inline-block;
+  border: none;
+  float: right;
+  padding: 5px 10px;
+  color: white;
+  width: 40%;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
 }
