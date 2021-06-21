@@ -1,0 +1,35 @@
+.container-form {
+  display: inline-block;
+  /* background-color: yellow; */
+}
+
+input {
+  display: inline-block;
+  color: var(--color-grey);
+  border: none;
+  border-bottom: 1px solid var(--color-grey);
+}
+
+#name {
+  display: inline-block;
+  width: 46%;
+  line-height: 35px;
+  font-size: 16px;
+  margin
+}
+
+#email {
+  display: inline-block;
+  width: 46%;
+  margin-left: 6%;
+  line-height: 35px;
+  font-size: 16px;
+}
+
+#message {
+  display: inline-block;
+  margin-top: 18px;;
+  width: 100%;
+  line-height: 90px;
+  font-size: 16px;
+}

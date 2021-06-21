@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 20px;
+  color: var(--color-grey);
 }
 .progress-bar > .bottom {
   display: inline-block;
