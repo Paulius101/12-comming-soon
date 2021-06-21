@@ -1,0 +1,32 @@
+.up {
+  display: inline-block;
+  position: absolute;
+  top: 420px;
+  left: 980px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #e91d62;
+  text-align: center;
+}
+.up > i {
+  margin-top: 7px;
+  font-size: 30px;
+  color: white;
+}
+.container > .row-big {
+  position: relative;
+}
+
+.subscribe {
+  width: 35%;
+  background-color: #eb1e63;
+  padding: 15px 35px;
+  color: white;
+  border: none;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+}
