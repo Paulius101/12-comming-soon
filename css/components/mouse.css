@@ -18,7 +18,7 @@
   top: 10px;
   left: 11px;
   animation-name: mouse;
-  animation-duration: 1.6s;
+  animation-duration: 1.7s;
   animation-iteration-count: infinite;
 }
 
@@ -47,6 +47,6 @@
     position: absolute;
     top: 35px;
     left: 11px;
-    opacity: 0.5;
+    opacity: 0;
   }
 }
