@@ -11,21 +11,20 @@
 </head>
 
 <body>
-    <div class="container hero bg-primary" id="virsus">
+    <div class="container hero bg-primary">
         <div class="row-small">
             <img class="logo" src="./img/logo.png" alt="Logo">
             <h1 class="main-title">Coming soon</h1>
             <p class="main-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate voluptatibus animi laudantium quaerat est fugiat cupiditate adipisci quae iure.</p>
             <div id="clock_1" class="clock">CLOCK 1</div>
-            <form class="enter-email">
-                <input type="email" class="enter-email-input" placeholder="Type your email">
-                <button class="subscribe" type="submit">Subscribe now</button>
+            <form>
+                <input id="subscribe_email" type="email" placeholder="Type your email" required>
+                <button class="btn" type="submit">Subscribe now</button>
             </form>
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
         </div>
-    </div>
     </div>
 
     <main class="container">
@@ -40,7 +39,7 @@
                     </div>
                     <div class="bottom">
                         <div class="progress" style="width: 90%;">
-                            <div class="animacija"></div>
+                            <div class="value"></div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +50,7 @@
                     </div>
                     <div class="bottom">
                         <div class="progress" style="width: 86%;">
-                            <div class="animacija"></div>
+                            <div class="value"></div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +61,7 @@
                     </div>
                     <div class="bottom">
                         <div class="progress" style="width: 30%;">
-                            <div class="animacija"></div>
+                            <div class="value"></div>
                         </div>
                     </div>
                 </div>
@@ -70,14 +69,13 @@
             <div class="right-column">
                 <h2 class="section-title">Have any question</h2>
                 <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, animi esse. Quia quisquam distinctio <a href="mailto:person@mail.xyz">person@mail.xyz</a> tempore, veritatis, quas eos itaque facilis in reprehenderit, voluptatum illo delectus odio fugiat laudantium quod.</p>
-                <form class="container-form">
-                    <input type="text" id="name" placeholder="Name">
-                    <input type="email" id="email" placeholder="Email">
-                    <textarea name="message" id="message" placeholder="Message"></textarea>
-                    <button type="submit" id="send-message">Send message</button>
+                <form>
+                    <input id="message_name" type="text" placeholder="Name" required>
+                    <input id="message_email" type="email" placeholder="Email" required>
+                    <textarea id="message_text" placeholder="Message" required maxlength="20"></textarea>
+                    <button class="btn" type="submit">Send message</button>
                 </form>
             </div>
-            <a class="up" href="#virsus"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
         </div>
     </main>
 
