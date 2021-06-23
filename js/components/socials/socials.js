@@ -8,11 +8,11 @@ function socials(selector, data) {
     for (const social of data) {
         HTML += `<a href="${social.href}"
                     target="_blank"
-                    class="fa fa-${social.icon}"></a>`;
+                    class="social fa fa-${social.icon}"></a>`;
     }
 
     // result return
-    DOM.innerHTML = HTML;
+    DOM.innerHTML += HTML;
 }
 
 export { socials }

@@ -1,77 +1,25 @@
-.container-form {
+form {
   display: inline-block;
-  /* background-color: yellow; */
-}
-
-input {
-  display: inline-block;
-  color: var(--color-grey);
-  border: none;
-  border-bottom: 1px solid var(--color-grey);
-}
-textarea {
-  border:none;
-  border-bottom: 1px solid var(--color-grey);
-  color: var(--color-grey);
-}
-#name {
-  display: inline-block;
-  width: 46%;
-  line-height: 35px;
-  font-size: 16px;
-  margin
-}
-
-#email {
-  display: inline-block;
-  width: 46%;
-  margin-left: 6%;
-  line-height: 35px;
-  font-size: 16px;
-}
-
-#message {
-  display: inline-block;
-  margin-top: 18px;
-  height:80px;
   width: 100%;
-  line-height: 90px;
-  font-size: 16px;
 }
-
-.enter-email {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.enter-email > .enter-email-input {
-  border: none;
-  border-bottom: 1px solid white;
-  background: transparent;
-  width:100%;
-  color: white;
-  line-height: 40px;
-  font-size: 16px;
-}
-.enter-email-input::placeholder {
-  color: white;
-}
-
-#send-message {
-  background-color: #EA1E63;
-  margin-top: 25px;
-  line-height: 40px;
+form > input,
+form > textarea {
   display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 6px 0;
+  line-height: 28px;
+  font-size: 20px;
+  color: var(--color-dark);
   border: none;
-  float: right;
-  padding: 5px 10px;
-  color: white;
-  width: 40%;
-  font-size: 16px;
-  text-align: center;
-  text-transform: capitalize;
+  border-bottom: 2px solid #ccc;
+}
+form > textarea {
+  resize: vertical;
+  min-height: 96px;
+  max-height: 292px;
+}
+form ::placeholder {
+  color: var(--color-grey);
+  font-style: italic;
 }
