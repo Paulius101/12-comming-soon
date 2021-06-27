@@ -18,7 +18,7 @@
             <p class="main-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate voluptatibus animi laudantium quaerat est fugiat cupiditate adipisci quae iure.</p>
             <div id="clock_1" class="clock">CLOCK 1</div>
             <form>
-                <input id="subscribe_email" type="email" placeholder="Type your email" required>
+                <input data-validation="email" id="subscribe_email" type="email" placeholder="Type your email" required>
                 <button class="btn" type="submit">Subscribe now</button>
             </form>
             <div class="mouse">
@@ -37,9 +37,9 @@
                 <h2 class="section-title">Have any question</h2>
                 <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, animi esse. Quia quisquam distinctio <a href="mailto:person@mail.xyz">person@mail.xyz</a> tempore, veritatis, quas eos itaque facilis in reprehenderit, voluptatum illo delectus odio fugiat laudantium quod.</p>
                 <form>
-                    <input id="message_name" type="text" placeholder="Name" required>
-                    <input id="message_email" type="email" placeholder="Email" required>
-                    <textarea id="message_text" placeholder="Message" required maxlength="20"></textarea>
+                    <input data-validation="name" id="message_name" type="text" placeholder="Name" required>
+                    <input data-validation="email" id="message_email" type="email" placeholder="Email" required>
+                    <textarea data-validation="text" id="message_text" placeholder="Message" required maxlength="20"></textarea>
                     <button class="btn" type="submit">Send message</button>
                 </form>
             </div>
