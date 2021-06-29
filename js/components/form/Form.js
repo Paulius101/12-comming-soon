@@ -1,6 +1,7 @@
 class Form {
-    constructor(selector) {
+    constructor(selector, toastObject) {
         this.selector = selector;
+        this.toastObject = toastObject;
 
         this.DOM = null;
         this.allInputsDOM = [];
@@ -45,32 +46,29 @@ class Form {
     }
 
     isValidEmail(email) {
-        if (typeof email !== 'string' ||
-            email.length < 6 ||
-            email.indexOf('@') === -1 || //reiskia @ stringe nerasta(-1)
-            email[0] === '@' ||         // pirma string reiksme yra@
-            email.slice(-4).indexOf('@') > -1 || //paima 4 paskutinius email simbolius ir iesko @
-            this.countSimbols(email, '@') > 1) { //tikrina kiek stringe yra atitinkamu simboliu!
-            return false;
+        const maxEmailLength = 50;
+        if (typeof email !== 'string' || email === '') {
+            return 'Email turi buti ne tuscias tekstas';
+        }
+        if (email.length > maxEmailLength) {
+            return `Email negali buti ilgesnis nei ${maxEmailLength} simboliu`;
+        }
+        if (email.indexOf('@') === -1) {
+            return 'Email turi tureti @ simboli';
         }
         return true;
     }
-    countSimbols(text, letter) {
-        let count = 0;
 
-        for (const t of text) {
-            if (t === letter) {
-                count++;
-            }
-        }
-        return count;
-    }
     isValidName(name) {
-        if (name === undefined ||
-            typeof name !== 'string' ||
-            name.length < 2 ||
-            !this.isUpperCase(name[0])) {
-            return false;
+        const maxNameLength = 50;
+        if (typeof name !== 'string' || name === '') {
+            return 'Vardas turi buti ne tuscias tekstas';
+        }
+        if (name.length > maxNameLength) {
+            return `Vardas negali buti ilgesnis nei ${maxNameLength} simboliu`;
+        }
+        if (name[0].toUpperCase() !== name[0]) {
+            return 'Vardo pirmoji raide turi buti didzioji';
         }
         return true;
     }
@@ -78,9 +76,12 @@ class Form {
         return letter === letter.toUpperCase();
     }
     isValidMessage(msg) {
-        if (typeof msg !== 'string' ||
-            msg === '') {
-            return false;
+        const maxTextLength = 1000;
+        if (typeof text !== 'string' || text === '') {
+            return 'Zinute turi buti ne tuscias tekstas';
+        }
+        if (text.length > maxTextLength) {
+            return `Zinute negali buti ilgesne nei ${maxTextLength} simboliu`;
         }
         return true;
     }
@@ -99,28 +100,32 @@ class Form {
                 // jei patikrinus visus laukus, nerasta nei vienos klaidos, tai "siunciam pranesima"
                 // jei patikrinus visus laukus, rasta bent viena klaida, tai parodome visu klaidos pranesimus (kol kas, viskas pateikiama i console)
                 if (validationRule === 'email') {
-                    if (this.isValidEmail(element.value) === false) {
-                        console.error('ERROR: invalid email!');
+                    if (this.isValidEmail(element.value) !== true) {
+                        this.toastObject.error(this.isValidEmail(element.value));
                         allGood = false;
                         break;  // jei randam klaida, baigiam darba, toliau neinam 
                     }
                 }
                 if (validationRule === 'name') {
-                    if (this.isValidName(element.value) === false) {
+                    if (this.isValidName(element.value) !== true) {
                         allGood = false;
-                        console.error('ERROR: invalid name!');
+                        this.toastObject.error(this.isValidName(element.value));
                         break;
                     }
                 }
                 if (validationRule === 'text') {
-                    if (this.isValidMessage(element.value) === false) {
+                    if (this.isValidMessage(element.value) !== true) {
                         allGood = false;
-                        console.error('ERROR: message box cant be empty!');
+                        this.toastObject.error(this.isValidMessage(element.value));
                         break;
                     }
                 }
             }
-            console.log('All Good?', allGood)
+            if (allGood) {
+                this.toastObject.success('Tavo formos informacija buvo issiusta!');
+
+            }
+
         });
     }
 }

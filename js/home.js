@@ -11,18 +11,9 @@ import { socialsData } from "./data/socialsData.js";
 
 // EXECUTION
 const toast = new Toast;
-toast.success('Tau pavyko!');
-toast.info('Pranesame apie si bei ta!');
-toast.warning('Tu cia ziurek..!');
-toast.error('Yra klaida!')
-// toast.error('Yra klaida!', 'Nauja antraste');
-
-
-
-
 new Clock('#clock_1', clockData);
 // socials('footer .socials', socialsData);
 new Progressbar('.left-column', progressBarData);
 new SocialsOOP('footer .socials', socialsData);
-new Form('.hero form');
-new Form('main form');
+new Form('.hero form', toast);
+new Form('main form', toast);
