@@ -77,11 +77,16 @@ class Form {
     }
     isValidMessage(msg) {
         const maxTextLength = 1000;
-        if (typeof text !== 'string' || text === '') {
+        const minTextLength = 10;
+        if (typeof msg !== 'string' || msg === '') {
             return 'Zinute turi buti ne tuscias tekstas';
         }
-        if (text.length > maxTextLength) {
+        if (msg.length > maxTextLength) {
             return `Zinute negali buti ilgesne nei ${maxTextLength} simboliu`;
+        }
+        if (msg.length < minTextLength) {
+            return `Zinute negali buti trumpesnė nei ${minTextLength} simboliu`;
+
         }
         return true;
     }
