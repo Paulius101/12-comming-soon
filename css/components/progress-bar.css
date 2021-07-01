@@ -24,11 +24,11 @@
   height: 100%;
   width: 100%;
   background-color: var(--color-primary);
-  animation-name: loading;
   animation-duration: 3s;
-  animation-iteration-count: infinite;
 }
-
+.loading .value {
+  animation-name: loading;
+}
 @keyframes loading {
   0% {
     width: 0;
